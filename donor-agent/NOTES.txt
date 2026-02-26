@@ -1,0 +1,14 @@
+This Discovery Pack v1 folder includes an anchored facts.json derived from the uploaded v0.5 governance ZIP.
+
+Anchored (has citations into canonical .tex files):
+- Governance Schedule Index force rule
+- Schedule B emergency scope bound
+- Schedule D logging gate
+- DAF overview donor-funds unilateral control constraint
+- External Summary donor-fund protections signal
+
+Not anchored (explicitly marked PROPOSED_NOT_YET_IN_CANONICAL_DOCS):
+- Apolitical donor-alignment intake rules (not present in the v0.5 ZIP)
+- Donation intake lanes and screen triggers (not present in the v0.5 ZIP)
+
+To fully productionize, insert those proposed rules into the canonical governance stack, then update facts.json citations accordingly.

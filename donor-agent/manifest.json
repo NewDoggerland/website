@@ -1,0 +1,67 @@
+{
+  "pack_name": "New Doggerland Donor Agent Discovery Pack",
+  "version": "1.0.0",
+  "generated_at": "2026-02-15T00:00:00Z",
+  "canonical_base_url": "https://newdoggerland.org/donor-agent/",
+  "public_agent_query_surface": {
+    "facts": "https://newdoggerland.org/donor-agent/facts.json",
+    "rubric": "https://newdoggerland.org/donor-agent/rubric.yml",
+    "evidence_schema": "https://newdoggerland.org/donor-agent/evidence.schema.json",
+    "policy_inventory_index": "https://newdoggerland.org/donor-agent/README.md#policy-inventory-index",
+    "semantic_changelog": "https://newdoggerland.org/donor-agent/README.md#semantic-changelog",
+    "exception_registry": "https://newdoggerland.org/donor-agent/README.md#exception-registry",
+    "micro_phase_closure_proofs": "https://newdoggerland.org/donor-agent/README.md#micro-phase-closure-proof-objects"
+  },
+  "taxonomy": {
+    "tags_file": "https://newdoggerland.org/donor-agent/README.md#stable-taxonomy-tags",
+    "term_index_file": "https://newdoggerland.org/donor-agent/README.md#term-index"
+  },
+  "files": [
+    {
+      "path": "facts.json",
+      "url": "https://newdoggerland.org/donor-agent/facts.json",
+      "media_type": "application/json",
+      "sha256": "ceeacc10bfd24de99fa00fda7718126a17695fdc7a6e5e5d0fc14efe0be2633a"
+    },
+    {
+      "path": "rubric.yml",
+      "url": "https://newdoggerland.org/donor-agent/rubric.yml",
+      "media_type": "text/yaml",
+      "sha256": "1db313ab84aea4390fd3d2fba2303c3f5b78e64f558735dfa6f5236dc8ace58e"
+    },
+    {
+      "path": "evidence.schema.json",
+      "url": "https://newdoggerland.org/donor-agent/evidence.schema.json",
+      "media_type": "application/schema+json",
+      "sha256": "30ba7aa8c7737f071123f38aeef74077ae00c76182f23fd8b021d1b88e3fe3c0"
+    },
+    {
+      "path": "README.md",
+      "url": "https://newdoggerland.org/donor-agent/README.md",
+      "media_type": "text/markdown",
+      "sha256": "a28aaa794542b784b7385b1e746571e7969c890eef576e2e77229f8dfc112861"
+    },
+    {
+      "path": "NOTES.txt",
+      "url": "https://newdoggerland.org/donor-agent/NOTES.txt",
+      "media_type": "text/plain",
+      "sha256": "4e03d77faa8f24f1e2b78d4997f13b5db78a194ab728fa1db3b987c509190ae4"
+    },
+    {
+      "path": "index.html",
+      "url": "https://newdoggerland.org/donor-agent/",
+      "media_type": "text/html",
+      "sha256": null
+    },
+    {
+      "path": "manifest.json",
+      "url": "https://newdoggerland.org/donor-agent/manifest.json",
+      "media_type": "application/json",
+      "sha256": null
+    }
+  ],
+  "integrity": {
+    "hash_algorithm": "sha256",
+    "note": "sha256 values computed over UTF-8 encoded response bytes. manifest.json sha256 is null by convention (a manifest cannot hash itself)."
+  }
+}

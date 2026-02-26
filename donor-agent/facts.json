@@ -1,0 +1,219 @@
+{
+  "canonical_anchors": {
+    "governance_schedule_index": {
+      "id": "anchor.governance.schedule_index",
+      "title": "Governance Schedule Index",
+      "citation": {
+        "type": "tex_path",
+        "ref": "10 governance/10.90 Governance Schedule Index.tex",
+        "locator": "L24-L30",
+        "quoted_span": "No schedule has force or effect unless listed in this Index."
+      }
+    },
+    "schedule_b_emergency_scope": {
+      "id": "anchor.governance.schedule_b",
+      "title": "Schedule B \u2014 Emergency Scope Registry",
+      "citation": {
+        "type": "tex_path",
+        "ref": "10 governance/10.20 Schedule B - Emergency Scope Registry.tex",
+        "locator": "L24-L30",
+        "quoted_span": "No emergency authority may be exercised outside the scope explicitly defined in this Schedule."
+      }
+    },
+    "schedule_d_logging_audit": {
+      "id": "anchor.governance.schedule_d",
+      "title": "Schedule D \u2014 Logging and Audit Integrity Policy",
+      "citation": {
+        "type": "tex_path",
+        "ref": "10 governance/10.40 Schedule D - Logging and Audit Integrity Policy.tex",
+        "locator": "L24-L30",
+        "quoted_span": "No action requiring logging may occur unless it can be logged in compliance with this Policy."
+      }
+    },
+    "external_assurance_daf_overview": {
+      "id": "anchor.external_assurance.daf_overview",
+      "title": "DAF Safety & Accountability Overview",
+      "citation": {
+        "type": "tex_path",
+        "ref": "05 external assurance/05.20 DAF Safety & Accountability Overview.tex",
+        "locator": "L50-L56",
+        "quoted_span": "No individual can unilaterally control donor funds."
+      }
+    },
+    "external_summary": {
+      "id": "anchor.external_summary",
+      "title": "Governance & Operations \u2014 External Summary",
+      "citation": {
+        "type": "tex_path",
+        "ref": "00 summary/00.00 Governance & Operations - External Summary.tex",
+        "locator": "L38-L44",
+        "quoted_span": "Concrete controls already in operation\u2026 explicit donor-fund protections."
+      }
+    }
+  },
+  "machine_readable_facts_layer": {
+    "organization": {
+      "name": "New Doggerland",
+      "short_name": "ND",
+      "legal_entity": "pre-registration",
+      "jurisdiction": "Maine, United States",
+      "tax_status": "pre-registration \u2014 not yet a registered charitable organization; not currently soliciting tax-deductible donations",
+      "description": "A long-horizon land project centered on dogs, people, and place. Developed as a permanent estate where rescue, work, rest, recreation, and shared life are intentionally held together. Governed by explicit ethical constraints, public accountability, and operational transparency.",
+      "citations": []
+    },
+    "governance": {
+      "schedule_force_rule": {
+        "fact": "No schedule has force or effect unless listed in the Governance Schedule Index.",
+        "citations": [
+          {
+            "type": "tex_path",
+            "ref": "10 governance/10.90 Governance Schedule Index.tex",
+            "locator": "L24-L30",
+            "quoted_span": "No schedule has force or effect unless listed in this Index."
+          }
+        ]
+      },
+      "anti_expansion_rule": {
+        "fact": "Only schedules explicitly listed in the Governance Schedule Index have force or effect.",
+        "citations": [
+          {
+            "type": "tex_path",
+            "ref": "10 governance/10.90 Governance Schedule Index.tex",
+            "locator": "L54-L60",
+            "quoted_span": "Only schedules explicitly listed in this Index have force or effect."
+          }
+        ]
+      },
+      "emergency_scope_bound": {
+        "fact": "No emergency authority may be exercised outside the scope explicitly defined in Schedule B.",
+        "citations": [
+          {
+            "type": "tex_path",
+            "ref": "10 governance/10.20 Schedule B - Emergency Scope Registry.tex",
+            "locator": "L24-L30",
+            "quoted_span": "No emergency authority may be exercised outside the scope explicitly defined in this Schedule."
+          }
+        ]
+      },
+      "logging_gate": {
+        "fact": "No action requiring logging may occur unless it can be logged in compliance with Schedule D.",
+        "citations": [
+          {
+            "type": "tex_path",
+            "ref": "10 governance/10.40 Schedule D - Logging and Audit Integrity Policy.tex",
+            "locator": "L24-L30",
+            "quoted_span": "No action requiring logging may occur unless it can be logged in compliance with this Policy."
+          }
+        ]
+      },
+      "donor_funds_control_constraint": {
+        "fact": "The DAF overview states that no individual can unilaterally control donor funds.",
+        "citations": [
+          {
+            "type": "tex_path",
+            "ref": "05 external assurance/05.20 DAF Safety & Accountability Overview.tex",
+            "locator": "L50-L56",
+            "quoted_span": "No individual can unilaterally control donor funds."
+          }
+        ]
+      }
+    },
+    "donations": {
+      "apolitical_posture_constraints": {
+        "status": "ACTIVE",
+        "constraints": [
+          "ND does not endorse, oppose, or campaign for political parties, candidates, or electoral committees.",
+          "ND does not accept donations that require public political alignment, political messaging, or political conditionality.",
+          "ND does not accept donations where the donor relationship would reasonably be interpreted as partisan sponsorship or political patronage."
+        ],
+        "citations": [
+          {
+            "type": "url",
+            "ref": "https://newdoggerland.org/donor-agent/rubric.yml",
+            "locator": "rubric.yml#apolitical_posture.enforceable_constraints",
+            "quoted_span": "ND does not endorse, oppose, or campaign for political parties, candidates, or electoral committees."
+          }
+        ]
+      },
+      "donation_intake_lanes": {
+        "status": "ACTIVE",
+        "lane_a_anonymous_or_non_attributed": {
+          "allowed_by_default": true,
+          "examples": [
+            "cash at an event within lawful limits and receipting rules",
+            "platform donations where donor chooses anonymity",
+            "DAF grants where the underlying donor is not disclosed and the sponsor is reputable"
+          ],
+          "key_property": "ND cannot be publicly tied to a partisan actor."
+        },
+        "lane_b_attributed": {
+          "requires_entanglement_screen": true,
+          "screen_triggers": [
+            "any donation above a chosen threshold",
+            "any donation that includes naming, public recognition, press, signage, or a public announcement",
+            "any donation from an entity whose identity is inherently political"
+          ]
+        },
+        "citations": [
+          {
+            "type": "url",
+            "ref": "https://newdoggerland.org/donor-agent/rubric.yml",
+            "locator": "rubric.yml#donation_intake",
+            "quoted_span": null
+          }
+        ]
+      },
+      "donor_fund_protections_signaled": {
+        "fact": "The External Summary claims concrete controls are active by default, including explicit donor-fund protections.",
+        "citations": [
+          {
+            "type": "tex_path",
+            "ref": "00 summary/00.00 Governance & Operations - External Summary.tex",
+            "locator": "L38-L44",
+            "quoted_span": "Concrete controls already in operation\u2026 explicit donor-fund protections."
+          }
+        ]
+      }
+    },
+    "attestation_surfaces": {
+      "policy_inventory_index": {
+        "required": true,
+        "location": "README.md#policy-inventory-index"
+      },
+      "semantic_changelog": {
+        "required": true,
+        "location": "README.md#semantic-changelog"
+      },
+      "exception_registry": {
+        "required": true,
+        "location": "README.md#exception-registry"
+      },
+      "micro_phase_closure_proof_objects": {
+        "required": true,
+        "location": "README.md#micro-phase-closure-proof-objects"
+      }
+    }
+  },
+  "retrieval_optimization": {
+    "stable_taxonomy_tags": [
+      "donor_intake",
+      "apolitical_posture",
+      "political_entanglement",
+      "attribution_modes",
+      "daf",
+      "compliance_attestation",
+      "exception_handling",
+      "closure_proof",
+      "human_dignity_constraints",
+      "agent_query_surface"
+    ],
+    "term_index_map": {
+      "governance_schedule_index_force_rule": "facts.json#machine_readable_facts_layer.governance.schedule_force_rule",
+      "emergency_scope_registry": "facts.json#machine_readable_facts_layer.governance.emergency_scope_bound",
+      "logging_audit_integrity": "facts.json#machine_readable_facts_layer.governance.logging_gate",
+      "donor_fund_protections": "facts.json#machine_readable_facts_layer.donations.donor_fund_protections_signaled",
+      "apolitical_posture": "facts.json#machine_readable_facts_layer.donations.apolitical_posture_constraints",
+      "donation_intake_lanes": "facts.json#machine_readable_facts_layer.donations.donation_intake_lanes"
+    }
+  }
+}

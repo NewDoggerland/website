@@ -1,0 +1,132 @@
+version: "1.0.0"
+
+apolitical_posture:
+  enforceable_constraints:
+    - "ND does not endorse, oppose, or campaign for political parties, candidates, or electoral committees."
+    - "ND does not accept donations that require public political alignment, political messaging, or political conditionality."
+    - "ND does not accept donations where the donor relationship would reasonably be interpreted as partisan sponsorship or political patronage."
+
+donation_intake:
+  lanes:
+    lane_a_anonymous_or_non_attributed:
+      description: "Anonymous or non-attributed gifts. Allowed by default if they meet basic legality and platform requirements."
+      allowed_by_default: true
+      examples:
+        - "cash at an event within lawful limits and receipting rules"
+        - "platform donations where donor chooses anonymity"
+        - "DAF grants where the underlying donor is not disclosed and the sponsor is reputable"
+      key_property: "ND cannot be publicly tied to a partisan actor."
+      required_evidence_paths:
+        - id: "ev.laneA.legality_platform"
+          path: "evidence.legality_and_platform"
+          required: true
+
+    lane_b_attributed:
+      description: "Attributed gifts (name attached). Require political entanglement screen."
+      allowed_by_default: false
+      screen_triggers:
+        - "any donation above a chosen threshold"
+        - "any donation that includes naming, public recognition, press, signage, or a public announcement"
+        - "any donation from an entity whose identity is inherently political (examples below)"
+      required_evidence_paths:
+        - id: "ev.laneB.entanglement_screen"
+          path: "evidence.political_entanglement_screen"
+          required: true
+
+refusal_categories:
+  politically_entangling_sources:
+    presumptively_non_aligned_with_apolitical_posture:
+      - "Political parties, candidate committees, PACs, Super PACs, political action committees, campaign committees."
+      - "Elected officials or candidates offering donations in a way that is tied to their office, campaign, or publicity apparatus."
+      - "Donations conditioned on ND making statements about political conflicts, elections, legislation, or partisan narratives."
+      - "Donations that require ND to display partisan slogans, partisan symbols, or partisan calls to action."
+    note: "For other donors, the issue is usually not who they are, but whether they demand political signaling."
+
+attribution_modes:
+  modes:
+    - id: "mode.1"
+      name: "Anonymous public attribution"
+      public_label: "Anonymous donor"
+      internal_identity_allowed: true
+      description: "Accept a gift while keeping public attribution anonymous, even if ND internally knows identity."
+    - id: "mode.2"
+      name: "Named public attribution"
+      public_label: "Donor name listed"
+      internal_identity_allowed: true
+      description: "Publicly list the donor (only after passing entanglement screen)."
+    - id: "mode.3"
+      name: "No public attribution"
+      public_label: "Not listed"
+      internal_identity_allowed: true
+      description: "ND declines to list donors at all, except where legally required."
+  safe_default:
+    rule: "If apolitical posture is sensitive to association, offer only modes 1 or 3 unless donor passes entanglement screen."
+
+required_terms_large_gifts:
+  no_political_conditionality_clause:
+    standard_term:
+      - "ND will not accept restrictions or side letters that require political messaging, political positioning, or public alignment."
+      - "ND retains unilateral discretion to treat any attempt to create political association as a refusal trigger, with refund."
+    enforcement:
+      - "If conditionality is detected post-acceptance, then refund and log an exception."
+
+daf_compatibility_layer:
+  rationale: "DAFs can deliver funds with minimal donor attribution and reduce public association risk."
+  constraint:
+    - "ND accepts DAF grants only from sponsors that can provide sufficient compliance documentation to treat funds as legitimate, even if the underlying donor remains anonymous."
+  required_evidence_paths:
+    - id: "ev.daf.sponsor_compliance"
+      path: "evidence.daf_sponsor_compliance"
+      required: true
+
+scoring:
+  model: "points_with_disqualifiers"
+  thresholds:
+    accept: 80
+    accept_anonymous_only: 60
+    review_required: 40
+    refuse: 0
+
+evidence_paths:
+  legality_and_platform:
+    description: "Basic legality + platform requirements satisfied."
+  political_entanglement_screen:
+    description: "Screen outcome + artifacts supporting decision."
+  daf_sponsor_compliance:
+    description: "Sponsor compliance documentation sufficient."
+
+disqualifiers:
+  - id: "dq.entangling_source"
+    description: "Donor is a politically entangling source as defined in refusal_categories."
+    triggered_by_evidence: "evidence.political_entanglement_screen.findings.entangling_source == true"
+    outcome: "refuse_or_refund"
+  - id: "dq.political_conditionality"
+    description: "Donation includes political conditionality or requires political signaling."
+    triggered_by_evidence: "evidence.political_entanglement_screen.findings.political_conditionality == true"
+    outcome: "refuse_or_refund"
+  - id: "dq.required_public_association"
+    description: "Donation requires public association that creates partisan sponsorship/patronage risk."
+    triggered_by_evidence: "evidence.political_entanglement_screen.findings.forced_public_association == true"
+    outcome: "accept_anonymous_only_or_refuse"
+
+decision_rules:
+  - if: "any(disqualifiers.triggered)"
+    then: "refuse_or_refund"
+  - if: "lane == lane_a_anonymous_or_non_attributed and evidence.legality_and_platform.ok == true"
+    then: "accept"
+  - if: "lane == lane_b_attributed and score >= thresholds.accept"
+    then: "accept_named_or_anonymous"
+  - if: "lane == lane_b_attributed and score >= thresholds.accept_anonymous_only"
+    then: "accept_anonymous_only"
+  - else: "review_required"
+
+publication_requirements:
+  static_agent_query_surface:
+    must_publish:
+      - "facts.json"
+      - "rubric.yml"
+      - "evidence.schema.json"
+      - "policy inventory index"
+      - "semantic changelog"
+      - "exception registry"
+      - "micro-phase closure proof objects"

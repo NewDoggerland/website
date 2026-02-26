@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>New Doggerland - Conversations</title>
+
+  <style>
+    @font-face {
+      font-family: "Enchanted Land";
+      src: url("fonts/Enchanted_Land.woff2") format("woff2");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --panel-width: 680px;
+      --panel-alpha: 0.52;
+      --panel-radius: 3px;
+      --amber: #C4A882;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: #000;
+      color: rgba(255,255,255,0.92);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Backgrounds - same crossfade system as coming soon */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      will-change: opacity;
+      transition: opacity 900ms ease-out;
+    }
+    .bg.bg-a { opacity: 1; }
+    .bg.bg-b { opacity: 0; }
+    .bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(0,0,0,.22), rgba(0,0,0,.58) 70%, rgba(0,0,0,.72)),
+        linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,.50));
+      pointer-events: none;
+    }
+
+    /* Scroll stage */
+    .stage {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 64px 24px 96px;
+    }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 52px;
+      opacity: 0;
+      transform: translateY(-6px);
+      transition: opacity 520ms ease-out, transform 520ms ease-out;
+    }
+    body.ready .site-header { opacity: 1; transform: none; }
+
+    .crest {
+      width: clamp(64px, 7vw, 88px);
+      height: auto;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.5));
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .site-name {
+      font-family: "Enchanted Land", serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.01em;
+      margin: 0;
+      text-shadow: 0 8px 22px rgba(0,0,0,0.55);
+    }
+
+    .page-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin: 0;
+    }
+
+    /* Main panel */
+    .panel {
+      width: min(var(--panel-width), calc(100vw - 32px));
+      background-image: linear-gradient(
+        180deg,
+        rgba(248,248,246,var(--panel-alpha)),
+        rgba(240,240,238,0.44)
+      );
+      backdrop-filter: blur(18px) saturate(140%);
+      color: rgba(16,16,14,0.90);
+      border-radius: var(--panel-radius);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+      padding: 36px 40px 44px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 560ms 80ms ease-out, transform 560ms 80ms ease-out;
+      position: relative;
+    }
+    body.ready .panel { opacity: 1; transform: none; }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: -22px;
+      border-radius: calc(var(--panel-radius) + 18px);
+      background: radial-gradient(
+        closest-side,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.05) 42%,
+        rgba(255,255,255,0.00) 74%
+      );
+      filter: blur(14px);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .panel-intro {
+      font-size: 15px;
+      line-height: 1.65;
+      opacity: 0.78;
+      margin: 0 0 32px;
+      text-align: center;
+    }
+
+    /* Category sections */
+    .categories {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .category {
+      border-top: 1px solid rgba(0,0,0,0.10);
+      padding: 18px 0 6px;
+    }
+    .category:first-child { border-top: none; }
+
+    .category-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .category-num {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      flex-shrink: 0;
+      min-width: 18px;
+    }
+
+    .category-title {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      opacity: 0.5;
+    }
+
+    .roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 8px;
+      padding-left: 28px;
+      padding-bottom: 10px;
+    }
+
+    /* role becomes a link */
+    .role {
+      display: inline-flex;
+      align-items: center;
+
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: rgba(16,16,14,0.82);
+
+      background: rgba(255,255,255,0.38);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 2px;
+      padding: 4px 10px;
+      line-height: 1.3;
+
+      text-decoration: none;
+      cursor: pointer;
+
+      transition: background-color 160ms ease-out, border-color 160ms ease-out, transform 160ms ease-out, opacity 160ms ease-out;
+    }
+
+    .role:hover {
+      background: rgba(255,255,255,0.52);
+      border-color: rgba(0,0,0,0.14);
+      opacity: 1;
+    }
+
+    .role:focus-visible {
+      outline: 2px solid rgba(0,0,0,0.28);
+      outline-offset: 2px;
+    }
+
+    .role:active {
+      transform: translateY(1px);
+    }
+
+    /* Contact section */
+    .contact-section {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(0,0,0,0.12);
+      text-align: center;
+    }
+
+    .contact-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.42;
+      margin: 0 0 10px;
+    }
+
+    .contact-line {
+      font-size: 15px;
+      line-height: 1.65;
+      opacity: 0.72;
+      margin: 0 0 14px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(16,16,14,0.88);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,0.22);
+      padding-bottom: 1px;
+      transition: border-color 160ms ease-out, opacity 160ms ease-out;
+    }
+    .contact-email:hover {
+      border-color: rgba(0,0,0,0.55);
+      opacity: 1;
+    }
+
+    /* Footer */
+    .page-footer {
+      position: fixed;
+      bottom: 14px;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px;
+      pointer-events: none;
+    }
+
+    .footer-link {
+      font-size: 13px;
+      opacity: 0.7;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      pointer-events: auto;
+      white-space: nowrap;
+    }
+
+    .footer-link a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.22);
+    }
+    .footer-link a:hover { border-bottom-color: rgba(255,255,255,0.55); }
+
+    @media (max-width: 520px) {
+      .stage { padding: 44px 16px 80px; }
+      .panel { padding: 24px 20px 32px; }
+      .roles { padding-left: 0; }
+      .footer-link { font-size: 11px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+      body .site-header, body .panel { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg bg-a" aria-hidden="true"></div>
+  <div class="bg bg-b" aria-hidden="true"></div>
+
+  <main class="stage">
+
+    <header class="site-header">
+      <img class="crest" src="ND001.png" alt="" />
+      <h1 class="site-name">New Doggerland</h1>
+      <p class="page-eyebrow">Conversations we would love to have</p>
+    </header>
+
+    <div class="panel">
+
+      <p class="panel-intro">
+        New Doggerland is at an early stage, and we are actively seeking people who share some part of
+        this vision - or who have knowledge, craft, or experience that could help shape it. We don't
+        need commitments. We need conversations.
+      </p>
+
+      <div class="categories">
+
+        <div class="category">
+          <div class="category-header">
+            <span class="category-num">1</span>
+            <span class="category-title">Governance, legal, and community legitimacy</span>
+          </div>
+          <div class="roles">
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Local%20Native%20Representatives">Local Native Representatives</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Unitarian%20Ministers">Unitarian Ministers</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Non-Profit%20Aligned%20Lawyers">Non-Profit Aligned Lawyers</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Non-Profit%20Aligned%20Accountants">Non-Profit Aligned Accountants</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Accessibility%20Specialists">Accessibility Specialists</a>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <span class="category-num">2</span>
+            <span class="category-title">Core welfare and human-support mission</span>
+          </div>
+          <div class="roles">
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Veterinarians">Veterinarians</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Animal%20Dieticians">Animal Dieticians</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Dog%20Behaviour%20Specialists">Dog Behaviour Specialists</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Dog%20Rescue%20Coordinators">Dog Rescue Coordinators</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=DV%20Support%20Specialists">DV Support Specialists</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Transition-Age%20Youth%20Services%20Providers">Transition-Age Youth Services Providers</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Trauma-Informed%20Clinicians%20(Licensed)">Trauma-Informed Clinicians (Licensed)</a>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <span class="category-num">3</span>
+            <span class="category-title">Working-dog integration</span>
+          </div>
+          <div class="roles">
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Any%20and%20All%20Working%20Dog%20Groups">Any and All Working Dog Groups</a>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <span class="category-num">4</span>
+            <span class="category-title">Land stewardship and ecological systems</span>
+          </div>
+          <div class="roles">
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Foresters">Foresters</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Trail%20Builders">Trail Builders</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Arborists">Arborists</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Regenerative%20Agriculture%20Specialists">Regenerative Agriculture Specialists</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Mycologists">Mycologists</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Goat%20Herd%20Managers">Goat Herd Managers</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Donkey%20Farriers">Donkey Farriers</a>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <span class="category-num">5</span>
+            <span class="category-title">Water, utilities, and site engineering</span>
+          </div>
+          <div class="roles">
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Renewable%20Energy%20Engineers">Renewable Energy Engineers</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Water%20Engineers">Water Engineers</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Well%20Drilling%20Companies">Well Drilling Companies</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Human%20%26%20Animal%20Waste%20Processors">Human &amp; Animal Waste Processors</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=LiDAR%20Drone%20Operators">LiDAR Drone Operators</a>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <span class="category-num">6</span>
+            <span class="category-title">Boundary, safety, and civil works</span>
+          </div>
+          <div class="roles">
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Fencing%20Contractors">Fencing Contractors</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Drystone%20Wallers">Drystone Wallers</a>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <span class="category-num">7</span>
+            <span class="category-title">Youth and education programming</span>
+          </div>
+          <div class="roles">
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Educators">Educators</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Youth%20Counselors">Youth Counselors</a>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <span class="category-num">8</span>
+            <span class="category-title">Activity partners and outdoor recreation</span>
+          </div>
+          <div class="roles">
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Disc%20Golf%20Course%20Builders">Disc Golf Course Builders</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=BMX%20%26%20Dirt%20Bike%20Track%20Builders">BMX &amp; Dirt Bike Track Builders</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Archery%20Clubs">Archery Clubs</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Cross-Country%20Ski%20Organizations">Cross-Country Ski Organizations</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Orienteering%2Clubs">Orienteering Clubs</a>
+          </div>
+        </div>
+
+        <div class="category">
+          <div class="category-header">
+            <span class="category-num">9</span>
+            <span class="category-title">Built experience, art, and guest-facing craft</span>
+          </div>
+          <div class="roles">
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Timber%20framer">Timber Framers/Carpenters</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Large%20Scale%20Outdoor%20Installation%20Artists">Large Scale Outdoor Installation Artists</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Brewers%20%26%20Fermenters">Brewers &amp; Fermenters</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Leather%20Workers">Leather Workers</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Heritage%20Boot%20Makers">Heritage Boot Makers</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Seamstresses%20%26%20Tailors">Seamstresses &amp; Tailors</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Blacksmiths">Blacksmiths</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Pet%20Grooming%20Trailer%20Manufacturers">Pet Grooming Trailer Manufacturers</a>
+            <a class="role" href="mailto:contact@newdoggerland.org?subject=Retired%20Crafts%20People">Retired Crafts People</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="contact-section">
+        <p class="contact-label">Get in touch</p>
+        <p class="contact-line">
+          If any of this speaks to you, your work, your knowledge, or your curiosity -
+          we would genuinely love to hear from you.
+        </p>
+        <a class="contact-email" href="mailto:contact@newdoggerland.org">
+          contact@newdoggerland.org
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="page-footer" aria-hidden="true">
+    <span class="footer-link"><a href="/">← back</a></span>
+    <span class="footer-link">photo credit</span>
+  </footer>
+
+  <script>
+    (() => {
+      const images = ["BG33.jpg","BG34.jpg","BG35.jpg","BG36.jpg","BG37.jpg"];
+      const a = document.querySelector(".bg-a");
+      const b = document.querySelector(".bg-b");
+      let idx = 0, showingA = true;
+
+      images.forEach(src => { const i = new Image(); i.src = src; });
+
+      const setBg = (el, src) => el.style.backgroundImage = `url("${src}")`;
+
+      const next = () => {
+        idx = (idx + 1) % images.length;
+        const top = showingA ? a : b;
+        const bottom = showingA ? b : a;
+        setBg(bottom, images[idx]);
+        top.style.opacity = "0";
+        bottom.style.opacity = "1";
+        showingA = !showingA;
+      };
+
+      setBg(a, images[0]);
+      setInterval(next, 9000);
+
+      // Fade in once font + crest ready
+      const crest = document.querySelector(".crest");
+      const fontReady = (document.fonts && document.fonts.load)
+        ? document.fonts.load('1em "Enchanted Land"')
+        : Promise.resolve();
+      const imgReady = new Promise(resolve => {
+        if (!crest) return resolve();
+        if (crest.complete && crest.naturalWidth > 0) return resolve();
+        crest.addEventListener("load", resolve, { once: true });
+        crest.addEventListener("error", resolve, { once: true });
+      });
+
+      Promise.all([fontReady, imgReady]).then(() => {
+        document.body.classList.add("ready");
+      });
+    })();
+  </script>
+
+</body>
+</html>

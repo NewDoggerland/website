@@ -1,0 +1,4 @@
+AddType text/yaml .yml .yaml
+AddType text/markdown .md
+AddType application/json .json
+AddDefaultCharset UTF-8

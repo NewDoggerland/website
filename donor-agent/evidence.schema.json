@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://newdoggerland.org/donor-agent/evidence.schema.json",
+  "title": "New Doggerland — Donor Intake Evidence Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["evidence_version", "donation", "evidence"],
+  "properties": {
+    "evidence_version": { "type": "string" },
+    "donation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lane", "amount", "currency", "requested_attribution_mode"],
+      "properties": {
+        "lane": { "type": "string", "enum": ["lane_a_anonymous_or_non_attributed", "lane_b_attributed"] },
+        "amount": { "type": "number", "minimum": 0 },
+        "currency": { "type": "string", "minLength": 3, "maxLength": 3 },
+        "requested_attribution_mode": { "type": "string", "enum": ["anonymous_public_attribution", "named_public_attribution", "no_public_attribution"] },
+        "daff_grant": { "type": "boolean", "default": false }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["legality_and_platform"],
+      "properties": {
+        "legality_and_platform": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ok", "artifacts"],
+          "properties": {
+            "ok": { "type": "boolean" },
+            "artifacts": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/artifact_ref" }
+            }
+          }
+        },
+        "political_entanglement_screen": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["performed", "findings", "artifacts"],
+          "properties": {
+            "performed": { "type": "boolean" },
+            "findings": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["entangling_source", "political_conditionality", "forced_public_association", "notes"],
+              "properties": {
+                "entangling_source": { "type": "boolean" },
+                "political_conditionality": { "type": "boolean" },
+                "forced_public_association": { "type": "boolean" },
+                "notes": { "type": "string" }
+              }
+            },
+            "artifacts": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/artifact_ref" }
+            }
+          }
+        },
+        "daf_sponsor_compliance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ok", "sponsor_name", "artifacts"],
+          "properties": {
+            "ok": { "type": "boolean" },
+            "sponsor_name": { "type": "string" },
+            "artifacts": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/artifact_ref" }
+            }
+          }
+        },
+        "attestations": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "no_political_conditionality_clause_included": { "type": "boolean" },
+            "refund_right_acknowledged": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "artifact_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "locator"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["url", "pdf", "email", "form", "note", "platform_record", "contract_term", "other"] },
+        "locator": { "type": "string" },
+        "hash_sha256": { "type": ["string", "null"] },
+        "captured_at": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

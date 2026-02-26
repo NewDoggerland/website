@@ -1,0 +1,730 @@
+[
+  {
+    "section": "",
+    "subsection": "",
+    "text": "[11pt]article ndstyle secnumdepth3 tocdepth3 New Doggerland - Consolidated Governance Document v0.5.2",
+    "page": 1,
+    "id": 0
+  },
+  {
+    "section": "Purpose and Mission Lock",
+    "subsection": "",
+    "text": "New Doggerland exists solely to advance its stated charitable, welfare, and stewardship purposes. Assets, authority, and operations must not deviate from these purposes. No activity may undermine dog welfare, human dignity, or the long-term stewardship obligations of the organization. No activity may be treated as undermining welfare, dignity, or stewardship solely because it imposes incidental, time-limited, or mitigated burdens that are necessary to prevent greater harm or to carry out mission-aligned duties under this document, provided the necessity basis is documented contemporaneously in",
+    "page": 1,
+    "id": 1
+  },
+  {
+    "section": "Purpose and Mission Lock",
+    "subsection": "Domain-Specific Optimization Constraint",
+    "text": "New Doggerland must designate a primary beneficiary for every operational, spatial, or experiential domain. Within a domain, New Doggerland may optimize conditions only for the designated primary beneficiary. Within a domain, New Doggerland must respect all non-primary beneficiaries. New Doggerland must not optimize conditions for more than one beneficiary within the same domain. New Doggerland must not use indulgence as a design, operational, or experiential objective in any domain. Mutability: Unchangeable",
+    "page": 1,
+    "id": 2
+  },
+  {
+    "section": "Authority, Hierarchy, and Precedence",
+    "subsection": "",
+    "text": "The governing hierarchy is fixed as follows: Interpretation notes are non-binding and do not create precedent, authority, or obligations. Interpretation notes must not be cited as independent authority in any Recorded Decision Pathway and must not be treated as policy unless formally adopted through the applicable governance or policy process. Mutability: Unchangeable",
+    "page": 2,
+    "id": 3
+  },
+  {
+    "section": "Derivation and Compression Principle",
+    "subsection": "",
+    "text": "All authority within New Doggerland originates exclusively from the governing hierarchy defined in All materials that are not part of that hierarchy, including but not limited to companion documents, public descriptions, staff handbooks, training materials, summaries, slogans, heuristics, cultural artifacts, and informal guidance, are subordinate and may exist only as derived representations of higher-order documents. Derived materials may summarize, simplify, restate, or compress existing rules and obligations, but must not originate new authority, create new obligations, grant permissions, c",
+    "page": 2,
+    "id": 4
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Founder",
+    "text": "The Founder is a defined organizational role responsible for originating and stewarding the foundational structure, mission articulation, and long-horizon coherence of New Doggerland. The initial Founder is the natural person who established New Doggerland and is identified as such in the organization\u2019s formation records. The Founder role: Upon retirement or voluntary transition from active stewardship, the incumbent Founder enters the Founder Steward role as defined in Upon incapacity, entry into the Founder Steward role is permitted only if the Governing Body records a finding that the incum",
+    "page": 3,
+    "id": 5
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Stewardship",
+    "text": "Stewardship is an independent oversight function responsible solely for continuity, integrity, and failure backstopping where governance mechanisms cannot operate as designed. Stewardship: Stewardship authority is limited strictly to the functions explicitly enumerated in this document. Mutability: Unchangeable",
+    "page": 3,
+    "id": 6
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Steward\u2019s Office",
+    "text": "The Steward\u2019s Office is the minimal administrative expression of Stewardship required to execute continuity functions explicitly granted by this document. The Steward\u2019s Office: The Steward\u2019s Office must not: For avoidance of doubt, the requirement that the Steward\u2019s Office act mechanically and without discretion prohibits independent judgment, prioritization, or policy interpretation. This does not prohibit the minimal application of Bounded Discretion solely where explicitly required to execute a continuity function already authorized by this document, provided that such discretion is fully d",
+    "page": 4,
+    "id": 7
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Stewardship Appointment, Term, and Vacancy",
+    "text": "The Steward is appointed by Supermajority vote of the Governing Body (as defined in The Steward must satisfy all eligibility requirements for Stewardship defined in Failure to meet any eligibility condition renders the appointment invalid. If an appointment is invalid under this subsection, any person may file an Eligibility Challenge Notice. Upon receipt, the Governing Body must (1) log the notice within twenty-four (24) hours, (2) determine eligibility within fourteen (14) days, and (3) record the determination and vote result. If ineligibility is confirmed, the Stewardship role is deemed va",
+    "page": 5,
+    "id": 8
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Supermajority",
+    "text": "A Supermajority is an affirmative vote of not less than two-thirds (2/3) of all active voting seats of the Governing Body, rounded up to the next whole number where necessary. Abstentions, absences, recusals, and vacancies do not reduce the number of votes required unless this document explicitly states otherwise. Mutability: Unchangeable",
+    "page": 5,
+    "id": 9
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Extraordinary Process",
+    "text": "An Extraordinary Process is a modification process that requires all of the following: An Extraordinary Process must not be completed through emergency authority, delegation, administrative action, or procedural shortcut. Mutability: Unchangeable",
+    "page": 5,
+    "id": 10
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Active Voting Seats",
+    "text": "Active Voting Seats are Governing Body seats that are currently filled by members whose terms are valid and not suspended or disqualified due to removal, resignation, Credible Impairment determination, classification-related suspension, or expiration of term. Vacant seats, expired terms, and seats subject to formal suspension or disqualification do not constitute Active Voting Seats for purposes of quorum, Supermajority calculations, or voting thresholds unless this document explicitly states otherwise. Mutability: Unchangeable",
+    "page": 6,
+    "id": 11
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Properly Requested Meeting",
+    "text": "A Properly Requested Meeting is a Governing Body meeting requested in accordance with all of the following conditions: Failure by the Governing Body Chair to convene a Properly Requested Meeting within the requested window constitutes refusal for purposes of any procedural backstop in this document. Mutability: Unchangeable",
+    "page": 6,
+    "id": 12
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Materially Affects",
+    "text": "A decision materially affects a person, asset, domain, or obligation if it meets one or more of the following conditions: A decision must be treated as materially affecting if reasonable disagreement exists as to its impact, provided that the disagreement is grounded in plausible, non-speculative effects within a reasonable operational time horizon based on facts known or reasonably available at the time. Abstract, hypothetical, or purely downstream disagreement does not, by itself, render an action materially affecting. Mutability: Unchangeable",
+    "page": 6,
+    "id": 13
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Material Action",
+    "text": "A Material Action is any action, decision, omission, authorization, or override that materially affects (as defined in any person, asset, domain, obligation, safety condition, welfare outcome, dignity protection, or governance mechanism. A Material Action includes: If reasonable disagreement exists, as qualified under as to whether an action is material, it must be treated as a Material Action. Mutability: Unchangeable",
+    "page": 7,
+    "id": 14
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Recorded Decision Pathway",
+    "text": "A Recorded Decision Pathway is the minimum complete written record that shows how and why a Material Action (as defined in was authorized and executed. A Recorded Decision Pathway must include all of the following: If any required element is missing, the Recorded Decision Pathway is invalid. For emergency actions, a Recorded Decision Pathway exists upon creation of a compliant emergency log stub containing, at minimum: All missing elements must be completed within the time limits required by the applicable operational manual emergency procedure. Mutability: Unchangeable",
+    "page": 7,
+    "id": 15
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Bounded Discretion",
+    "text": "Bounded Discretion is the minimum unavoidable judgment exercised to apply a rule whose trigger or scope cannot be executed mechanically. Bounded Discretion is permitted only if: Bounded Discretion must not be used to: Mutability: Unchangeable",
+    "page": 8,
+    "id": 16
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Routine, Reversible, and Role-Scoped",
+    "text": "For purposes of this document and the Operational Manuals: Mutability: Unchangeable",
+    "page": 8,
+    "id": 17
+  },
+  {
+    "section": "Definitions",
+    "subsection": "External Governance Arbiter",
+    "text": "An External Governance Arbiter is an independent individual or body retained solely to provide neutral adjudication, review, or approval functions expressly required by this document. An External Governance Arbiter must satisfy all of the following conditions: An External Governance Arbiter: Failure to meet any eligibility condition renders the Arbiter appointment invalid. Mutability: Unchangeable",
+    "page": 9,
+    "id": 18
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Controlled Subsidiary",
+    "text": "A Controlled Subsidiary is any legal entity in which New Doggerland directly or indirectly: For avoidance of doubt, a for-profit entity may be a Controlled Subsidiary. Mutability: Unchangeable",
+    "page": 9,
+    "id": 19
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Subsidiary Governance Charter",
+    "text": "A Subsidiary Governance Charter is a written instrument adopted by the Governing Body that defines the subsidiary\u2019s: A Subsidiary Governance Charter is subordinate to this Consolidated Governance Document pursuant to Mutability: Unchangeable",
+    "page": 9,
+    "id": 20
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Related-Party Transaction",
+    "text": "A Related-Party Transaction is any transaction, contract, lease, service agreement, loan, transfer, or in-kind arrangement between: Mutability: Unchangeable",
+    "page": 10,
+    "id": 21
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Independent Supervisor Layer",
+    "text": "An Independent Supervisor Layer is a bona fide supervisory role that satisfies all of the following conditions: A nominal, ceremonial, or conflicted supervisory arrangement does not constitute an Independent Supervisor Layer. Mutability: Unchangeable",
+    "page": 10,
+    "id": 22
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Credible Impairment",
+    "text": "Credible Impairment is a demonstrable condition that materially prevents a person from reliably performing the essential duties of their role. A finding of Credible Impairment requires documented evidence of one or more of the following: Credible Impairment must not be based solely on: Any determination of Credible Impairment must be documented, reviewable, and subject to the same procedural safeguards applicable to removal for cause. Mutability: Unchangeable",
+    "page": 11,
+    "id": 23
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Material Financial Interest",
+    "text": "A Material Financial Interest exists when a person has any direct or indirect financial stake that could reasonably influence, or be perceived to influence, their judgment, independence, or conduct with respect to the organization. A Material Financial Interest includes, but is not limited to: A financial interest is material regardless of: A financial interest is not material solely because of: Any reasonable doubt as to materiality must be resolved in favor of classification as material. Mutability: Unchangeable",
+    "page": 11,
+    "id": 24
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Independently Valued Housing Benefit",
+    "text": "An Independently Valued Housing Benefit is a non-transferable, non-owning residential use right provided solely for organizational continuity, security, or operational necessity. Such a benefit: Failure to meet these requirements converts the benefit into a Material Financial Interest. Mutability: Unchangeable",
+    "page": 12,
+    "id": 25
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Independently Verifiable Compensation Data",
+    "text": "Independently Verifiable Compensation Data is compensation information sourced from entities or datasets that are external to the organization, methodologically transparent, and reasonably resistant to manipulation. Independently Verifiable Compensation Data must satisfy all of the following: Acceptable sources include, but are not limited to: Unacceptable sources include: Where multiple credible sources diverge, the Governing Body must document the rationale for selecting the benchmark used. Any reasonable doubt as to independence or verifiability must be resolved against use of the data. Mut",
+    "page": 13,
+    "id": 26
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Upper End of Prevailing Market Norms",
+    "text": "The Upper End of Prevailing Market Norms means compensation at or above the seventy-fifth (75th) percentile of independently verifiable market compensation for comparable roles, responsibilities, experience, and geographic context. Determination must: If percentile data is unavailable for a role, the Governing Body must document a conservative proxy methodology designed to approximate the seventy-fifth (75th) percentile and must disclose the limitation. Any reasonable doubt as to percentile placement must be resolved upward. Mutability: Unchangeable",
+    "page": 13,
+    "id": 27
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Compensation Philosophy Framework",
+    "text": "A Compensation Philosophy Framework is a documented, role-tiered approach to compensation that establishes target ranges, benchmarking methods, and adjustment criteria consistent with organizational sustainability, dignity protections, and non-extractive principles. The framework must: Failure to maintain or follow an approved Compensation Philosophy Framework constitutes a governance failure requiring remediation. Mutability: Unchangeable",
+    "page": 13,
+    "id": 28
+  },
+  {
+    "section": "Definitions",
+    "subsection": "Dignity Floor",
+    "text": "The Dignity Floor is the minimum compensation level below which no participating individual may be reduced under any hardship, emergency, or continuity mechanism. The Dignity Floor must be sufficient to meet basic living needs for the applicable role holder and must be determined using objective, externally verifiable criteria. At a minimum, the Dignity Floor must account for: The Dignity Floor must be calculated using: The Dignity Floor must not: Where multiple benchmarks exist, the highest applicable benchmark must be used unless the Governing Body documents a clear, non-extractive justifica",
+    "page": 14,
+    "id": 29
+  },
+  {
+    "section": "Mission Statement",
+    "subsection": "Status and Authority",
+    "text": "This Mission Statement is non-binding. It exists to clarify intent and orientation. It does not grant authority, create obligations, or supersede any provision of this Consolidated Governance Document or any governing document derived from it. In the event of any conflict, this Mission Statement is subordinate to this Consolidated Governance Document and to the governing hierarchy stated in Section Mutability: Revisable",
+    "page": 15,
+    "id": 30
+  },
+  {
+    "section": "Mission Statement",
+    "subsection": "Mission",
+    "text": "New Doggerland exists to restore and protect the dignity of dogs and people through long-term stewardship, direct care, and community access to safe, diverse environments for coexistence, where such access is consistent with animal welfare and dignity constraints. All New Doggerland operations exist to support and sustain animal rescue, sanctuary, and adoption, and may not operate independently of that purpose. The organization proceeds with restraint, prioritizing animal and human dignity over growth, efficiency, popularity, or scale, and accepting limits on expansion, cost, or scope when req",
+    "page": 15,
+    "id": 31
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Governing Authority",
+    "text": "The Governing Body holds ultimate authority over organizational decisions, subject to the constraints of this document and applicable law. No individual may exercise unilateral control over governance outcomes. Mutability: Revisable",
+    "page": 15,
+    "id": 32
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Controlled Subsidiary Creation Authority",
+    "text": "Creation, acquisition, or assumption of control of any Controlled Subsidiary (as defined in constitutes a Material Action under and requires a Recorded Decision Pathway under No Controlled Subsidiary may be created, acquired, or controlled unless: Mutability: Unchangeable",
+    "page": 15,
+    "id": 33
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Subsidiary Oversight and Operational Independence",
+    "text": "The Governing Body retains ultimate oversight responsibility for all Controlled Subsidiaries. Such oversight is limited to: Except for the oversight functions explicitly enumerated in this subsection and in the applicable Subsidiary Governance Charter, the Governing Body must not direct day-to-day subsidiary operations. No subsidiary governance instrument, policy, or practice may be treated as creating authority over New Doggerland beyond the governing hierarchy in Mutability: Unchangeable",
+    "page": 16,
+    "id": 34
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Subsidiary Conflicts and Related-Party Transactions",
+    "text": "All Related-Party Transactions (as defined in constitute Material Actions under and require a Recorded Decision Pathway under No Related-Party Transaction may be approved unless: A Subsidiary Governance Charter must include a mechanical conflict screening workflow and must prohibit informal or undocumented arrangements between New Doggerland and any Controlled Subsidiary. Mutability: Unchangeable",
+    "page": 16,
+    "id": 35
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Subsidiary Profit Distribution and Reserve Policy",
+    "text": "Each Controlled Subsidiary must operate under a documented profit distribution and reserve policy contained in its Subsidiary Governance Charter. The default permitted direction of value transfer is from subsidiary to New Doggerland. Transfers from New Doggerland to any Controlled Subsidiary are prohibited unless: Subsidiary distributions to New Doggerland must not be represented as donor-directed unless legally restricted and recorded as such. Subsidiary profits must not be relied upon to justify reduction of any Dignity Floor obligations under or to subsidize extractive labor practices. Muta",
+    "page": 16,
+    "id": 36
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Subsidiary Shutdown, Divestment, or Dissolution Authority",
+    "text": "Shutdown, divestment, dissolution, or loss of control of any Controlled Subsidiary constitutes a Material Action under and requires a Recorded Decision Pathway under The Governing Body may authorize shutdown or divestment by Supermajority vote under if any of the following conditions are met: A Subsidiary Governance Charter must include a mechanical shutdown and wind-down procedure that prioritizes legal compliance, staff dignity protections, and prevention of harm to animals and persons. Mutability: Unchangeable",
+    "page": 17,
+    "id": 37
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Mission Protection Under Subsidiary Dominance",
+    "text": "If any Controlled Subsidiary becomes operationally dominant such that reasonable risk exists of mission inversion or governance capture, the Governing Body must initiate a mandatory dominance review as a Material Action under For purposes of this subsection, operational dominance exists if one or more of the following conditions holds for two consecutive quarterly reporting periods: The dominance review must: Failure to initiate or record a required dominance review constitutes a governance process failure requiring remediation under Mutability: Unchangeable",
+    "page": 17,
+    "id": 38
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Founder Strategic Articulation",
+    "text": "The Founder (as defined in and the Founder Steward (as defined in may issue written Strategic Articulations describing evolving structure, priorities, or implementation pathways consistent with the mission. Any Strategic Articulation: Mutability: Unchangeable",
+    "page": 18,
+    "id": 39
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Governing Body Composition, Selection, and Removal",
+    "text": "Composition The Governing Body must consist of an odd number of voting members. The Governing Body must have no fewer than five (5) and no more than eleven (11) voting members. Any increase in the maximum number of voting seats beyond eleven (11) requires an Extraordinary Process (as defined in Mutability: Revisable Eligibility and Disqualification A person may serve on the Governing Body only if they can act independently and disclose conflicts. A person may serve on the Governing Body only if they demonstrate a sustained, good-faith commitment to animal welfare, human welfare, or responsible",
+    "page": 20,
+    "id": 40
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Non-Voting Governing Body Chair (Procedural Steward Role)",
+    "text": "Role Definition. The Governing Body Chair is a procedural role that presides over Governing Body meetings and safeguards procedural integrity. The Chair role: Mutability: Revisable Founder Chair Default (Non-Voting). The Founder (as defined in occupies the non-voting Governing Body Chair role unless the Founder declines the position in writing, subject only to removal as permitted under Mutability: Unchangeable Voting Prohibition. The Governing Body Chair must not vote on any Governing Body matter. Mutability: Unchangeable Quorum Exclusion. The Governing Body Chair does not count toward quorum",
+    "page": 22,
+    "id": 41
+  },
+  {
+    "section": "Governance Bodies",
+    "subsection": "Founder Steward Role",
+    "text": "Definition The Founder Steward is a post-operational stewardship state of the Founder role, analogous to a Founder Emeritus position. The Founder Steward: Mutability: Unchangeable Advisory Function The Founder Steward may issue non-binding guidance regarding architectural coherence, sequencing, and system integration. Such guidance: Mutability: Revisable Aesthetic Stewardship and Directional Authority New Doggerland establishes an Aesthetic Stewardship Domain governing visual, spatial, material, atmospheric, and experiential coherence across the estate. The Founder Steward role holds exclusive",
+    "page": 25,
+    "id": 42
+  },
+  {
+    "section": "Ethics, Prohibitions, and Values",
+    "subsection": "Values and Principles",
+    "text": "Values guide interpretation but do not independently create enforceable obligations unless explicitly labeled as binding. Failure to consider values must be documented during panel review if relevant. Mutability:",
+    "page": 25,
+    "id": 43
+  },
+  {
+    "section": "Ethics, Prohibitions, and Values",
+    "subsection": "Compensation and Fair Pay Constraints",
+    "text": "Fair Compensation Framework All employed persons must be compensated in accordance with an approved Compensation Philosophy Framework (as defined in The framework must: Compensation for any role must not fall below the Dignity Floor (as defined in Compensation may exceed the Upper End of Prevailing Market Norms only with documented justification. Compensation below the Upper End of Prevailing Market Norms requires documented, non-extractive rationale and must not rely on mission alignment, prestige, or implied sacrifice. Any deviation from the applicable target range requires written justifica",
+    "page": 27,
+    "id": 44
+  },
+  {
+    "section": "Enforcement Authority",
+    "subsection": "",
+    "text": "Where enforcement authority is specified, that authority governs. Where unspecified, enforcement defaults to the Governing Body under the operational manuals and is subject to the Classification, Arbitration, and Accountability provisions ( No enforcement action may occur without a Recorded Decision Pathway (as defined in For emergency actions, a Recorded Decision Pathway exists upon creation of a compliant emergency log stub as defined in even if full documentation is completed later. Mutability: Revisable",
+    "page": 27,
+    "id": 45
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "",
+    "text": "Emergency authority exists only as explicitly defined in this section and may be exercised solely within the categories enumerated below. For avoidance of doubt, this section defines the exclusive categories and limits for emergency authority under this document. The Emergency Scope Registry: No emergency action may be taken absent valid authority under a Registry category. Actions outside the Registry are unauthorized and prohibited under this document. Each emergency invocation: Emergency authority must not be used to: Emergency authority does not create precedent and must not be cited as au",
+    "page": 28,
+    "id": 46
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "Emergency Authority Sunset",
+    "text": "All governance-approved emergency procedures and any Emergency Scope Registry entries adopted by Governance Schedule or Governing Body action automatically expire twenty-four (24) months after approval unless explicitly reaffirmed by the Governing Body. For avoidance of doubt, the Emergency Scope Registry entries defined inline in this document (E-001 through E-090, inclusive) are Unchangeable constitutional provisions and are not subject to expiration under this subsection. This sunset applies to governance-approved extensions, additions, or procedural elaborations of emergency authority, not",
+    "page": 29,
+    "id": 47
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "Continuity Authority During Quorum Loss",
+    "text": "If the Governing Body lacks quorum and such loss persists beyond seven (7) consecutive days, a temporary Continuity Authority is automatically activated for the sole purpose of preventing imminent harm, maintaining legal compliance, and preserving animal welfare. Continuity Authority is exercised by the following persons, in order of priority: For purposes of this subsection, \"equivalent senior executive\" means the highest-ranking paid staff role designated in writing by the Governing Body in advance and recorded in the governance record. \"Removal proceedings\" begin only upon issuance of a wri",
+    "page": 30,
+    "id": 48
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "Registry Object Vocabulary",
+    "text": "Emergency log stubs must reference affected objects using only the following controlled classes: Free-text object references are invalid.",
+    "page": 30,
+    "id": 49
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "E-001 - Immediate Medical Emergency (Human)",
+    "text": "Trigger Standard: Observable signs of life-threatening or urgent medical distress requiring immediate intervention. Permitted Actions: Forbidden Actions: Stop Condition: Handoff to medical authority or stabilization with refusal of further care. Maximum Expiration: Four (4) hours.",
+    "page": 31,
+    "id": 50
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "E-002 - Immediate Medical Emergency (Animal)",
+    "text": "Trigger Standard: Animal in acute distress creating imminent risk to life or severe injury. Permitted Actions: Forbidden Actions: Stop Condition: Animal stabilized or transferred to qualified care. Maximum Expiration: Four (4) hours.",
+    "page": 31,
+    "id": 51
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "E-010 - Fire, Smoke, or Explosion Risk",
+    "text": "Trigger Standard: Visible smoke or flame, alarm activation with corroboration, or credible report of fire risk. Permitted Actions: Forbidden Actions: Stop Condition: Fire authority clearance. Maximum Expiration: Four (4) hours.",
+    "page": 32,
+    "id": 52
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "E-011 - Gas Leak or Suspected Gas",
+    "text": "Trigger Standard: Odor of gas, detector alarm, or credible report. Permitted Actions: Forbidden Actions: Stop Condition: Utility or fire authority clearance. Maximum Expiration: Four (4) hours.",
+    "page": 32,
+    "id": 53
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "E-020 - Structural or Environmental Hazard",
+    "text": "Trigger Standard: Observable physical condition creating imminent injury risk. Permitted Actions: Forbidden Actions: Stop Condition: Hazard neutralized or area rendered safe. Maximum Expiration: Four (4) hours.",
+    "page": 33,
+    "id": 54
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "E-030 - Violence Threat or Active Altercation",
+    "text": "Trigger Standard: Credible threat of violence, active physical altercation, or weapon sighting. Permitted Actions: Forbidden Actions: Stop Condition: Law enforcement or security authority assumes control. Maximum Expiration: Four (4) hours.",
+    "page": 33,
+    "id": 55
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "E-040 - Missing Child or Missing Dog",
+    "text": "Trigger Standard: Report of missing child or dog with reasonable safety concern. Permitted Actions: Forbidden Actions: Stop Condition: Reunion or escalation to external authorities. Maximum Expiration: Four (4) hours.",
+    "page": 34,
+    "id": 56
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "E-050 - Utility Failure Threatening Welfare or Safety",
+    "text": "Trigger Standard: Utility outage creating imminent risk to welfare or safety. Permitted Actions: Forbidden Actions: Stop Condition: Utility restoration or stabilized safe alternative. Maximum Expiration: Four (4) hours.",
+    "page": 35,
+    "id": 57
+  },
+  {
+    "section": "Emergency Scope Registry",
+    "subsection": "E-090 - Logging System Outage",
+    "text": "Trigger Standard: Primary logging system unavailable at time of action. Permitted Actions: Forbidden Actions: Stop Condition: Primary logging restored. Maximum Expiration: Seventy-two (72) hours to complete transcription. This Mutability designation applies to the Emergency Scope Registry provisions in this section, including all Registry entries and controlled vocabularies defined herein. Governance Schedule B (Emergency Scope Registry) declares its own mutability separately. Mutability: Unchangeable",
+    "page": 35,
+    "id": 58
+  },
+  {
+    "section": "Operations and Manuals",
+    "subsection": "",
+    "text": "Operational manuals: Operational Manuals may define narrowly scoped emergency action procedures solely to prevent imminent harm, provided such procedures create no new authority, confer no discretion beyond necessity, and remain fully subject to logging, review, and classification requirements of this document. Mutability: Adaptive",
+    "page": 35,
+    "id": 59
+  },
+  {
+    "section": "Assets, Land, and Dissolution",
+    "subsection": "Asset Stewardship",
+    "text": "Assets are held exclusively for charitable purposes. No asset may be distributed for private gain.",
+    "page": 36,
+    "id": 60
+  },
+  {
+    "section": "Assets, Land, and Dissolution",
+    "subsection": "Land Use",
+    "text": "Land use does not imply ownership. No land arrangement may enable extraction or speculative benefit.",
+    "page": 36,
+    "id": 61
+  },
+  {
+    "section": "Assets, Land, and Dissolution",
+    "subsection": "Dissolution",
+    "text": "Assets must transfer to a qualified charitable entity with aligned purposes. Mutability: Unchangeable",
+    "page": 36,
+    "id": 62
+  },
+  {
+    "section": "Transparency and Overrides",
+    "subsection": "Material Actions",
+    "text": "All Material Actions (as defined in must be: Overrides require documented justification and retrospective review. Mutability: Revisable",
+    "page": 36,
+    "id": 63
+  },
+  {
+    "section": "Transparency and Overrides",
+    "subsection": "Materiality Challenge Protocol",
+    "text": "If reasonable disagreement exists as to whether an action is a Material Action, any voting member or affected party may file a Materiality Challenge in writing. Upon a Materiality Challenge: Failure to issue a timely determination constitutes a governance process failure and automatically triggers Classification Panel review for procedural remediation only. Mutability: Unchangeable",
+    "page": 36,
+    "id": 64
+  },
+  {
+    "section": "Transparency and Overrides",
+    "subsection": "Temporary Collective Hardship Covenant",
+    "text": "This Covenant exists solely to permit temporary organizational survival during severe, documented financial distress without transferring that distress onto specific individuals through coercion or exploitation. Invocation of this Covenant is permitted only if all of the following conditions are met: When invoked, the Covenant operates under the following constraints: The Covenant must not be used to: Any misuse, misrepresentation, coercion, or selective application of this Covenant constitutes prima facie evidence of Abuse under Mutability: Unchangeable",
+    "page": 37,
+    "id": 65
+  },
+  {
+    "section": "Protected Residential Continuity",
+    "subsection": "Founder Continuity Residence",
+    "text": "The organization may provide a non-transferable on-site residence to the Founder (as defined in solely to preserve organizational continuity, security, and long-horizon stewardship. This residence: Provision of this residence requires:",
+    "page": 38,
+    "id": 66
+  },
+  {
+    "section": "Protected Residential Continuity",
+    "subsection": "Periodic Review",
+    "text": "The Founder Continuity Residence must be reviewed no less frequently than once every five (5) years to confirm that: Failure to complete or document a required review automatically suspends the protection until cured.",
+    "page": 38,
+    "id": 67
+  },
+  {
+    "section": "Protected Residential Continuity",
+    "subsection": "Survivor Occupancy Transition",
+    "text": "Upon the Founder\u2019s death, a surviving spouse may continue occupying the residence for life, subject to the constraints below, and must not be displaced solely due to the Founder\u2019s death. Such continued occupancy: The Governing Body may impose reasonable, documented conditions solely to preserve safety, operational continuity, or legal compliance, but must not impose time limits, coercive terms, or displacement absent such necessity.",
+    "page": 38,
+    "id": 68
+  },
+  {
+    "section": "Protected Residential Continuity",
+    "subsection": "Service-Based Occupancy",
+    "text": "A person raised in the Founder\u2019s household may occupy the residence only while holding a full-time, bona fide working position with the organization under standard employment terms. This occupancy:",
+    "page": 39,
+    "id": 69
+  },
+  {
+    "section": "Protected Residential Continuity",
+    "subsection": "Abuse Disqualification",
+    "text": "Any final finding of Abuse under immediately terminates all protections under this section for the offending individual. Mutability: Unchangeable",
+    "page": 39,
+    "id": 70
+  },
+  {
+    "section": "Amendment and Mutability Rules",
+    "subsection": "",
+    "text": "Each section declares its mutability class. Where nested sections or subsections declare different mutability classes, the most specific mutability designation governs.",
+    "page": 39,
+    "id": 71
+  },
+  {
+    "section": "Amendment and Mutability Rules",
+    "subsection": "Foundational Phase Operability",
+    "text": "New Doggerland may operate under a Foundational Phase to permit safe and accountable operation while specified governance mechanisms, operational manuals, logs, or administrative systems are not yet fully instantiated. A Foundational Phase may be activated only by a Recorded Decision Pathway (as defined in approved by Supermajority vote (as defined in A Foundational Phase activation record must include all of the following: Where the Primary Logging System (as required by Governance Schedule D) is not yet instantiated, the activation record must include a specific target date for transition fr",
+    "page": 40,
+    "id": 72
+  },
+  {
+    "section": "Interpretation",
+    "subsection": "",
+    "text": "This document must be interpreted narrowly. Where ambiguity exists, interpretation must favor: No interpretation may expand authority beyond what is explicitly granted. Mutability: Unchangeable",
+    "page": 41,
+    "id": 73
+  },
+  {
+    "section": "Interpretation",
+    "subsection": "Interpretation Tie-Break Protocol",
+    "text": "If two or more interpretations of a provision remain plausible after applying plain meaning and contextual reading, the following tie-break hierarchy must be applied in order: No interpretation may be adopted solely on the basis of convenience, efficiency, precedent, or institutional preference. If a tie remains after applying this hierarchy, the matter must be escalated to the Classification Panel for documented resolution. Mutability: Unchangeable",
+    "page": 41,
+    "id": 74
+  },
+  {
+    "section": "Interpretation",
+    "subsection": "Early-Stage Governance Principle",
+    "text": "The governance framework of New Doggerland is intentionally designed to be fully operational prior to organizational scale or reputational maturity. This sequencing reflects the principle that safety, accountability, and control must precede growth rather than follow it. Future decisions regarding expansion, funding structure, or operational tempo shall be evaluated against this principle, with preference given to preserving governance integrity over accelerating outcomes.",
+    "page": 41,
+    "id": 75
+  },
+  {
+    "section": "Failure Handling",
+    "subsection": "",
+    "text": "Mistakes are expected. Bad-faith actions, concealment, or retaliation are prohibited. Errors addressed transparently must not be punished solely for occurrence. Mutability: Revisable",
+    "page": 41,
+    "id": 76
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Action Classification",
+    "text": "All material actions must be classified as Mistake, Violation, or Abuse. Mutability: Unchangeable",
+    "page": 42,
+    "id": 77
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Mistake",
+    "text": "Good faith + reasonable belief + prompt disclosure + non-recurrence = Mistake. Requires correction and documentation only. Mutability: Unchangeable",
+    "page": 42,
+    "id": 78
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Violation",
+    "text": "Intentional bypass, concealment, reckless disregard, or persistence after correction = Violation. Requires formal review. Mutability: Unchangeable",
+    "page": 42,
+    "id": 79
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Abuse",
+    "text": "Meets Violation criteria + exploit intent, retaliation, repetition, or credible harm. Requires escalation and may trigger authority removal. Mutability: Unchangeable",
+    "page": 42,
+    "id": 80
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Classification Authority",
+    "text": "A three-member panel is required. No person may classify their own conduct. Mutability: Unchangeable",
+    "page": 42,
+    "id": 81
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Panel Selection",
+    "text": "Each panel member is selected independently by: If the organization's staff count is fewer than three (3) persons, or if the Stewardship role is vacant, the affected selection slot defaults to an external appointee selected by the appointing body from among persons who satisfy the independence requirements of an External Governance Arbiter (as defined in excluding current Governing Body members, the Founder, and the Founder Steward. This minimal-scale provision does not expand panel authority and terminates automatically when the staffing or vacancy condition is resolved. Mutability: Revisable",
+    "page": 43,
+    "id": 82
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Relationship to Values",
+    "text": "If values materially relate to harm, the panel must assess whether they were ignored. Mutability: Unchangeable",
+    "page": 43,
+    "id": 83
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Classification Standards",
+    "text": "Only logs, facts, and credible testimony may be considered. Belief or values alone are not sufficient. Mutability: Unchangeable",
+    "page": 43,
+    "id": 84
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Burden of Proof",
+    "text": "If the threshold is not met, classification defaults to the lowest applicable level. Mutability: Unchangeable",
+    "page": 43,
+    "id": 85
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Testimony Definition",
+    "text": "Testimony must be first-hand, internally consistent, and corroborated. Uncorroborated testimony alone cannot support an Abuse finding. Mutability: Unchangeable",
+    "page": 43,
+    "id": 86
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Appeals",
+    "text": "Each classified party may appeal once to a pre-approved External Governance Arbiter (as defined in Mutability: Revisable",
+    "page": 44,
+    "id": 87
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Panel Term Enforcement",
+    "text": "Panelists serve staggered 24-month terms, max two consecutive terms. Expired panelists are automatically disqualified. Mutability: Unchangeable",
+    "page": 44,
+    "id": 88
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Quorum Safeguards",
+    "text": "Quorum loss pauses classification and prohibits irreversible decisions. Mutability: Unchangeable",
+    "page": 44,
+    "id": 89
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Arbiter Assignment Randomization",
+    "text": "Where this document requires an External Governance Arbiter, the Arbiter must be assigned by a documented random selection process from the eligible Arbiter pool, unless random selection is infeasible due to conflicts, unavailability, or time-critical constraints. If random selection is infeasible, the appointing body must document: Mutability: Unchangeable",
+    "page": 44,
+    "id": 90
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Stewardship Backstop",
+    "text": "If the Governing Body fails to rotate panelists, the Steward\u2019s Office (as defined in appoints a temporary interim member strictly for continuity purposes and not eligible for a full term. Mutability: Unchangeable",
+    "page": 45,
+    "id": 91
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Emergency Good-Faith Presumption",
+    "text": "When emergency authority is invoked to prevent imminent harm, subsequent review must begin with a presumption of good faith unless evidence indicates concealment, reckless disregard, or exploit intent. This presumption does not prevent review, classification, or consequence, but it prohibits adverse classification based solely on frequency, urgency, or outcome absent supporting evidence. Repeated emergency invocations by the same actor within a rolling review period automatically trigger a mandatory comparative analysis and panel review. Frequency alone must not determine classification, but i",
+    "page": 45,
+    "id": 92
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Pattern-Based Corroboration",
+    "text": "Repeated, independently logged actions that align in time, method, or target may be treated as corroborative evidence even if no single incident independently meets the Abuse threshold. Patterns may corroborate intent, recklessness, or concealment when: Pattern-based corroboration must not rely on subjective impressions alone and must be grounded in recorded facts. Mutability: Unchangeable",
+    "page": 45,
+    "id": 93
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Anti-Tamper Presumption",
+    "text": "Any intentional alteration, suppression, destruction, or fabrication of logs, records, or audit trails constitutes prima facie evidence of Violation. If tampering materially impairs classification, the presumption escalates to Abuse unless the actor demonstrates a credible, non-exploitative cause. Good-faith errors that are promptly disclosed and corrected do not constitute tampering. Emergency log stubs must be written to an append-only, tamper-evident record system meeting policy-defined integrity requirements. Deletion or modification must be detectably evident upon review. Mutability: Unch",
+    "page": 45,
+    "id": 94
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Residence Protection Disqualification Upon Abuse",
+    "text": "Any finding of Abuse under this Section automatically terminates all residence protections granted under for the offending individual. Termination under this subsection: This disqualification does not affect the rights of non-offending parties unless independently implicated by classification. Mutability: Unchangeable",
+    "page": 46,
+    "id": 95
+  },
+  {
+    "section": "Classification, Arbitration, and Accountability",
+    "subsection": "Whistleblower Protection and Anti-Retaliation Presumption",
+    "text": "Any adverse action taken against a person for reporting, cooperating with, or reasonably attempting to report a concern in good faith constitutes presumptive Abuse. Adverse actions include, but are not limited to: The presumption of Abuse applies unless the actor demonstrates by clear evidence that the action was: Good-faith but mistaken reports do not constitute misconduct and must not trigger adverse action. Mutability: Unchangeable",
+    "page": 46,
+    "id": 96
+  },
+  {
+    "section": "Constitutional Repair Protocol",
+    "subsection": "Purpose",
+    "text": "This protocol exists solely to prevent unavoidable harm caused by continued enforcement of an Unchangeable provision under materially changed conditions. This protocol must not be used to optimize convenience, efficiency, growth, or authority. Mutability: Unchangeable",
+    "page": 46,
+    "id": 97
+  },
+  {
+    "section": "Constitutional Repair Protocol",
+    "subsection": "Trigger Threshold",
+    "text": "The Constitutional Repair Protocol may be invoked only if all of the following conditions are met: Mutability: Unchangeable",
+    "page": 47,
+    "id": 98
+  },
+  {
+    "section": "Constitutional Repair Protocol",
+    "subsection": "Invocation Requirements",
+    "text": "Invocation requires all of the following: Mutability: Unchangeable",
+    "page": 47,
+    "id": 99
+  },
+  {
+    "section": "Constitutional Repair Protocol",
+    "subsection": "Scope Limitation",
+    "text": "Any modification under this protocol must: Mutability: Unchangeable",
+    "page": 47,
+    "id": 100
+  },
+  {
+    "section": "Constitutional Repair Protocol",
+    "subsection": "Interim Harm Mitigation Pending Repair",
+    "text": "If the Trigger Threshold in this Protocol is met but the Delay and Disclosure period has not yet elapsed, the Governing Body may authorize a strictly temporary Interim Mitigation solely to prevent the specific harm identified in the written findings. Interim Mitigation: Interim Mitigation must not: All Interim Mitigation authorizations and renewals must be included in the public disclosure materials for the Repair. Mutability: Unchangeable",
+    "page": 48,
+    "id": 101
+  },
+  {
+    "section": "Constitutional Repair Protocol",
+    "subsection": "Delay and Disclosure",
+    "text": "Approved modifications must be subject to a mandatory public disclosure and delay period of not less than sixty days prior to effect. The disclosure must include the full text of the proposed change, the recorded votes, and the written findings. Mutability: Unchangeable",
+    "page": 48,
+    "id": 102
+  },
+  {
+    "section": "Constitutional Repair Protocol",
+    "subsection": "Post-Repair Review",
+    "text": "Within twelve months of any repair taking effect, the Governing Body must commission an independent review assessing: The review must be published in full. Mutability: Unchangeable",
+    "page": 48,
+    "id": 103
+  }
+]

@@ -1,0 +1,11 @@
+# Large background images (served via FTP, not needed in repo)
+BG*.jpg
+
+# Binary/media
+*.pdf
+ND001.png
+
+# Build artifacts
+node_modules/
+dist/
+*.code-workspace
