@@ -303,10 +303,7 @@ mark { background: var(--mark); color: var(--text); padding: 0 .08em; border-rad
 .rt-section { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--text-dim); letter-spacing: .05em; }
 .rt-pg { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--gold); font-weight: 500; margin-left: auto; }
 
-.reading-body {
-  font-size: var(--fs-ui);
- flex: 1; padding: 2.2rem 2.8rem; max-width: 920px;
-  margin: 0 auto; }
+
 .reading-body.page-mode {
   max-width: 100%;
   width: 100%;
@@ -323,19 +320,6 @@ mark { background: var(--mark); color: var(--text); padding: 0 .08em; border-rad
   flex: 1;
   min-height: 0;
 }
-.reading-body h2 {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400;
-  color: var(--gold); letter-spacing: .05em; margin-bottom: .3rem; line-height: 1.3;
-}
-.reading-body h3 {
-  font-family: 'Libre Baskerville', serif; font-size: .92rem; font-weight: 700;
-  color: var(--text-dim); margin-bottom: 1rem; padding-bottom: .6rem;
-  border-bottom: 1px solid var(--border); letter-spacing: .02em;
-}
-.reading-body .passage-text {
-  font-size: .95rem; line-height: 1.85; color: var(--text);
-}
-.reading-body .passage-text mark { background: var(--mark); }
 
 .reading-ph {
   flex: 1; display: flex; flex-direction: column; align-items: center;
@@ -356,36 +340,7 @@ footer {
 .logo { flex-shrink: 0; }
 
 /* Reader tabs + SVG fidelity pane */
-.reader-tabs{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  gap:4px;
-  margin: 0;
-  padding: 3px 6px;
-  border-bottom: 1px solid var(--line);
-  border-radius: 0;
-  background: var(--panel);
-  flex-shrink: 0;
-}
-.tab-btn{
-  font: 600 8px/1 var(--mono);
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  color: var(--muted);
-  background: transparent;
-  border: 1px solid transparent;
-  padding: 3px 6px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-.tab-btn.active{
-  color: var(--text);
-  border-color: var(--line);
-  background: linear-gradient(180deg, rgba(196,168,130,.12), rgba(196,168,130,.04));
-}
-.tab-btn:focus{ outline: 2px solid rgba(196,168,130,.35); outline-offset: 2px; }
-.tab-hint{display:none;}
+
 #rb-pdf{
   width: 100%;
   height: 100%;
@@ -398,7 +353,7 @@ footer {
 /* --- Consistent font sizing across UI surfaces --- */
 .nav-sec .sl, .nav-sec .sp, .results-meta, .hit-label, .hit-text, .hit-doc, .hit-pg,
 .search input, .topbar, .disclaimer-btn, .theme-btn { font-size: var(--fs-ui); }
-.reading-body .passage-text { font-size: var(--fs-doc); }
+
 
 /* --- Prevent logo from exploding when layout is broken --- */
 
@@ -408,7 +363,7 @@ footer {
 .reader .reader-inner { width: min(920px, 100%); margin: 0 auto; }
 /* Center the page SVG/object */
 .page-wrap { display:flex; justify-content:center; }
-/* Make TEXT/PAGE toggle match surrounding font size */
+
 .toggle button { font-size: 16px; letter-spacing: 0.08em; }
 
 /* TOC passage formatting */
@@ -482,11 +437,6 @@ footer {
       <p>Search across all 15 documents, or browse by section using the nav on the left. Click any result to read the full passage.</p>
     </div>
     <div class="reading-body" id="reading-body" style="display:none">
-
-      <div class="tab-panel" id="panel-text">
-        <div class="passage-text" id="rb-text"></div>
-      </div>
-
       <div class="tab-panel" id="panel-page">
         <iframe id="rb-pdf" src="" title="Page fidelity view" aria-label="Page fidelity view"></iframe>
       </div>
@@ -525,12 +475,35 @@ function esc(s) {
   return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
+
 function highlight(text, query) {
   if (!query) return esc(text).replace(/\n/g, '<br>');
   var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
   var safe = terms.map(function(t) { return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }).join('|');
   if (!safe) return esc(text).replace(/\n/g, '<br>');
   return esc(text).replace(/\n/g, '<br>').replace(new RegExp('(' + safe + ')', 'gi'), '<mark>$1</mark>');
+}
+
+function isTocText(s){
+  return (/(?:\.\s){4,}/).test(s);
+}
+
+function normalizeText(s){
+  s = String(s||'');
+  s = s.replace(/\u2022\s*(?:,\s*)+/g, '\u2022 ');
+  s = s.replace(/\s*\u2022\s*/g, '\n\u2022 ');
+  s = s.replace(/\s+(\d+\.\d+\s+E-\d+\s+-\s)/g, '\n\n$1');
+  s = s.replace(/\s+((?:Trigger Standard|Permitted Actions|Forbidden Actions|Stop Condition|Maximum Expiration):)/g, '\n$1');
+  s = s.replace(/\s+(Mutability:\s)/g, '\n\n$1');
+  s = s.replace(/\b([A-Za-z]{2,})-\s+([A-Za-z]{2,})\b/g, '$1$2');
+  s = s.replace(/\n\u2022\s*(and\s+)?\(([^)]+)\),\s*([A-Za-z][A-Za-z-]*)([\.,])?/g, function(_,andWord,paren,term,punct){
+    return '\n\u2022 ' + (andWord ? 'and ' : '') + term + ' (' + paren + ')' + (punct || '');
+  });
+  s = s.replace(/(\n\u2022[^\n]*?\.)\s+(\d+\s+[A-Z])/g, '$1\n\n$2');
+  s = s.replace(/(\n\u2022[^\n]*?\.)\s+(Progression|Mutability|Status|Authority|Scope|Precedence|New|This|The|For|Any|No|If|Where|When)\b/g, '$1\n\n$2');
+  s = s.replace(/([\.\!\?])\s+(\d+\s+[A-Z])/g, '$1\n\n$2');
+  s = s.replace(/\s+(\d+\.\d+\s+Phase\s+\d+:)/g, '\n\n$1');
+  return s.trim();
 }
 
 function excerpt(text, query, maxLen) {
@@ -579,78 +552,6 @@ function escapeHTML(s){
     .replace(/'/g,'&#39;');
 }
 
-function isTocText(s){
-  // True if text contains repeated dot-leader sequences
-  return (/(?:\.\s){4,}/).test(s);
-}
-
-function formatTocText(s, query){
-  // Split on boundaries between a page number and the next entry title.
-  // Pattern: digits followed by whitespace+word (next entry start).
-  // We parse by finding all matches of: (title)(dots)(pagenum)
-  var entries = [];
-  var re = /(.+?)\s*(?:\.\s*){3,}\s*(\d+)(?=\s|$)/g;
-  var m;
-  while ((m = re.exec(s)) !== null) {
-    entries.push({ title: m[1].trim(), page: m[2] });
-  }
-  if (!entries.length) return null;
-
-  var terms = query ? query.toLowerCase().split(/\s+/).filter(Boolean) : [];
-  function hlTitle(t) {
-    var esc = escapeHTML(t);
-    if (!terms.length) return esc;
-    terms.forEach(function(term){
-      var rx = new RegExp('(' + term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
-      esc = esc.replace(rx, '<mark>$1</mark>');
-    });
-    return esc;
-  }
-
-  var html = '<ul class="toc-list">';
-  entries.forEach(function(e){
-    html += '<li class="toc-entry">' +
-      '<span class="toc-title">' + hlTitle(e.title) + '</span>' +
-      '<span class="toc-dots"></span>' +
-      '<span class="toc-pg">p.\u00a0' + e.page + '</span>' +
-      '</li>';
-  });
-  html += '</ul>';
-  return html;
-}
-
-function normalizeText(s){
-  s = String(s||'');
-  // Remove stray comma sequences that appear after bullet points (PDF extraction artifact)
-  // e.g. "• , , , PERSON.GUEST" → "• PERSON.GUEST"
-  s = s.replace(/•\s*(?:,\s*)+/g, '• ');
-  // Insert line breaks before bullet points when extraction collapses them
-  s = s.replace(/\s*•\s*/g, '\n• ');
-  // Insert line breaks before emergency registry entries (e.g. "9.4 E-001 -", "9.5 E-002 -")
-  s = s.replace(/\s+(\d+\.\d+\s+E-\d+\s+-\s)/g, '\n\n$1');
-  // Insert line breaks before labelled fields in registry entries
-  s = s.replace(/\s+((?:Trigger Standard|Permitted Actions|Forbidden Actions|Stop Condition|Maximum Expiration):)/g, '\n$1');
-  // Insert line break before Mutability declarations
-  s = s.replace(/\s+(Mutability:\s)/g, '\n\n$1');
-  s = s.replace(/\b([A-Za-z]{2,})-\s+([A-Za-z]{2,})\b/g, '$1$2');
-  // Swap "(note), term" -> "term (note)" for bullet fragments
-  s = s.replace(/\n•\s*(and\s+)?\(([^)]+)\),\s*([A-Za-z][A-Za-z-]*)([\.,])?/g, function(_,andWord,paren,term,punct){
-    return '\n• ' + (andWord ? 'and ' : '') + term + ' (' + paren + ')' + (punct || '');
-  });
-
-  // Insert paragraph breaks when a section heading or paragraph is collapsed onto the end of a bullet line.
-  // Examples we want to fix: "• ... generations. Progression is ..." and "• ... ambition-driven. 10 What ..."
-  s = s.replace(/(\n•[^\n]*?\.)\s+(\d+\s+[A-Z])/g, '$1\n\n$2');
-  s = s.replace(/(\n•[^\n]*?\.)\s+(Progression|Mutability|Status|Authority|Scope|Precedence|New|This|The|For|Any|No|If|Where|When)\b/g, '$1\n\n$2');
-  // Insert paragraph breaks before numbered section headings that get glued to prior sentences.
-  s = s.replace(/([\.\!\?])\s+(\d+\s+[A-Z])/g, '$1\n\n$2');
-  // Insert paragraph breaks before Phase headings that get glued to prior text.
-  s = s.replace(/\s+(\d+\.\d+\s+Phase\s+\d+:)/g, '\n\n$1');
-
-  return s.trim();
-}
-
-
 // ── Reading pane ─────────────────────────────────────────
 var activeId = null; // passage id (string)
 var activeQuery = '';
@@ -665,29 +566,13 @@ function showPassage(id, query) {
   window.__currentPdfPage = (p && p.page) ? p.page : 1;
 activeId = String(id);
 
-  var norm = normalizeText(p.text);
-  var q = query || activeQuery;
-  var tocHtml = isTocText(norm) ? formatTocText(norm, q) : null;
-  if (tocHtml) {
-    document.getElementById('rb-text').innerHTML = tocHtml;
-  } else {
-    var escaped = escapeHTML(norm);
-    document.getElementById('rb-text').innerHTML = highlight(escaped, q).replace(/\n/g,'<br>');
-  }
-  // PDF fidelity pane: cache-bust with timestamp so every passage navigation forces a real reload.
-  var pdfFrame = document.getElementById('rb-pdf');
-  var pdfSrc = '/New_Doggerland_Combined.pdf?v=0.6#page=' + (p.page || 1) + '&zoom=page-width&view=FitH';
-  pdfFrame.setAttribute('src', pdfSrc);
 
-  // Heuristic: if the text appears to have list/code structure likely to be mangled by extraction,
-  // recommend (and default to) the SVG fidelity view.
-  var needsFidelity =
-      /[•\u2022]/.test(p.text || '') ||
-      /\bIF\b/.test(p.text || '') ||
-      /\bTHEN\b/.test(p.text || '') ||
-      /\.{5,}/.test(p.text || '');
-  var hint = document.getElementById('tab-hint');
-  if (hint) hint.style.display = needsFidelity ? '' : 'none';
+    var pdfFrame = document.getElementById('rb-pdf');
+  var pdfSrc = '/New_Doggerland_Combined.pdf?v=0.6#page=' + (p.page || 1) + '&zoom=page-width&view=FitH';
+  // Clear src first so the browser treats the new URL as a fresh load even if
+  // only the fragment changed (fragment-only changes do not trigger iframe reload).
+  pdfFrame.src = '';
+  setTimeout(function() { pdfFrame.src = pdfSrc; }, 30);
 
   // Always show PDF pane.
   document.getElementById('panel-page').style.display = 'flex';
