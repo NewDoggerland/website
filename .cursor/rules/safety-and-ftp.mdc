@@ -1,0 +1,52 @@
+---
+description: Safety, FTP/GitHub access, and commit discipline
+alwaysApply: true
+---
+
+# Safety and live-site conventions
+
+## FTP and GitHub access
+
+Unless the user says otherwise, assume you have **FTP access** (credentials in `.env`; use `ftp-upload`, `ftp-sync`, `ftp-compare` as appropriate) and **GitHub access** (git in the workspace; push/pull as needed). Do not ask for permission to use these for normal, scoped tasks. Still confirm before dangerous actions (see below).
+
+## Confirm before dangerous actions
+
+**Ask before doing** any of the following. Do not run, execute, or apply until the user confirms.
+
+- Uploading or syncing many files to FTP / production (e.g. full WEBROOT upload).
+- Overwriting live or production data.
+- Creating or writing credentials (e.g. `.env` with secrets) and then running a command that uses them.
+- Deleting or removing files in bulk, especially on remote/FTP.
+- Any script or command that could overwrite, replace, or delete more than a small number of user-specified files.
+
+**Safe to do without asking:** Editing local files, running read-only or dry-run commands, uploading a small set of files the user explicitly requested (e.g. "upload these 2 files").
+
+When in doubt, ask: "This will [action]. Proceed?"
+
+## FTP and WEBROOT
+
+- **FTP is the live site.** WEBROOT is the local copy. Sync direction: download from FTP to WEBROOT with `ftp-sync`; upload only when the user asks for specific files or actions.
+- **Upload script:** `ftp-upload.js` must only upload files explicitly passed as arguments. Do not run a full-tree upload unless the user has explicitly requested it and confirmed.
+- Do not read, echo, or log credentials from `.env`.
+
+## Commits (git)
+
+**Before every commit**, you must:
+
+1. **Stipulate changes:** List which files (or areas) are being changed and what the change is.
+2. **Give reasons:** State why each change is being made (e.g. "Bump version to 0.6.1" or "Add Community Representation Seat subsection per governance update").
+
+Do **not** run `git commit` until you have stated the changes and reasons. Prefer doing this in a short summary (e.g. in chat or in the commit message draft) so the user sees what will be committed and why. If the user has not asked for a commit, you may still propose one with this stipulation and wait for confirmation.
+
+## Uploads and overwrites (FTP, deploy, production)
+
+**Before uploading or overwriting anything** (FTP, deploy scripts, or any action that changes live/production files), you must:
+
+1. **Stipulate what:** List exactly which file(s) or paths will be uploaded or overwritten.
+2. **Give reasons:** State why each is being updated (e.g. "Governance discovery page v0.6.1 text" or "Deploy fix for search index").
+
+Do **not** run upload or overwrite commands until you have stated what will change and why. If the user has not explicitly asked for a specific upload, propose the list and reasons and wait for confirmation before proceeding.
+
+## Annotations
+
+Do not add annotations (code comments, explanatory asides, or extra commentary) unless the user asks for them.

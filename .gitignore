@@ -7,5 +7,11 @@ ND001.png
 
 # Build artifacts
 node_modules/
+
+# FTP / local env (credentials)
+.env
+
+# Generated report (review before fixing)
+discrepancy-report.md
 dist/
 *.code-workspace

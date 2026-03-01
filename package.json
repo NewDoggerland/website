@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "type": "module",
+  "description": "WEBROOT subordinate to live FTP. Sync from FTP then run doc-discrepancy-check.",
+  "scripts": {
+    "ftp-compare": "node scripts/ftp-compare.js",
+    "ftp-sync": "node scripts/ftp-sync.js",
+    "ftp-upload": "node scripts/ftp-upload.js",
+    "doc-discrepancy-check": "node scripts/doc-discrepancy-check.js"
+  },
+  "dependencies": {
+    "basic-ftp": "^5.0.5",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -8,7 +8,7 @@
       "phase": 0,
       "cost": null,
       "status": "locked",
-      "description": "640–1,200 acres of contiguous forested land in Southern Maine, the permanent physical foundation of New Doggerland. Parcels in the 400–639 acre range remain eligible only if they pass two strict gating tests: (1) Separation test: the rescue core and resort core can be placed with a meaningful buffer and independent service circulation; (2) Trail test: the site can support an expansive trail network without frequent crossings of high-traffic operational zones. The target parcel combines mature mixed forest with varied terrain, adequate natural water features, and proximity to Southern Maine's population centers without being so accessible as to compromise the sense of arrival and seclusion the resort model depends on. Land is secured under a long-term stewardship lease structured for a minimum 200-year term rather than outright purchase, preserving the landowner's underlying ownership while giving New Doggerland the operational security required to invest at institutional scale. The right landowner understands they are not selling; they are partnering with a governance-locked institution designed to outlast them. Finding the land and the right landowner is the founding act, everything else is contingent on it. Target acquisition: 2026.",
+      "description": "640–1,200 acres of contiguous forested land in Southern Maine, the permanent physical foundation of New Doggerland. Parcels in the 400–639 acre range remain eligible only if they pass two strict gating tests: (1) Separation test: the rescue core and resort core can be placed with a meaningful buffer and independent service circulation; (2) Trail test: the site can support an expansive trail network without frequent crossings of high-traffic operational zones. The target parcel combines mature mixed forest with varied terrain, adequate natural water features, and proximity to Southern Maine's population centers without being so accessible as to compromise the sense of arrival and seclusion the resort model depends on. Land is secured under a long-term stewardship lease structured for a minimum 200-year term rather than outright purchase, preserving the landowner's underlying ownership while giving New Doggerland the operational security required to invest at institutional scale. The right landowner understands they are not selling; they are partnering with a governance-locked institution designed to outlast them. Finding the land and the right landowner is the founding act, everything else is contingent on it. Target acquisition: 2026-28",
       "dependencies": [],
       "unlocks": [
         "porta_potties"
@@ -502,7 +502,7 @@
       "costMonthly": 8000,
       "minProjectedIncome": 32000,
       "costYearly": null,
-      "emphasis": false,
+      "emphasis": true,
       "incomeMin": null,
       "incomeMax": null,
       "potentialGrantRevenue": null,
@@ -2076,9 +2076,9 @@
       "label": "Sanctuary Rescue Core upgrade",
       "category": "sanctuary",
       "phase": 3,
-      "cost": 250000,
+      "cost": 850000,
       "status": "locked",
-      "description": "Expansion of the Phase 1 sanctuary from 12-dog initial capacity to a professional high-volume rescue and adoption facility capable of processing 250 dogs per year at the highest operational standards. This is the inflection point, the node that transforms New Doggerland from a credible small rescue into a serious regional institution.\nThe upgrade encompasses four major additions. First, a main kennel expansion to 80-100 individual housing units with indoor/outdoor runs, climate control, acoustic dampening, and natural light design, each unit above industry minimum in every dimension. Second, a dedicated intake and quarantine building with isolation kennels, exam rooms, and disease-control protocols sufficient for high-volume intake from multiple sources including transport fleet deliveries, local surrender, and disaster response. Third, a behavioral rehabilitation wing with separate play yards grouped by temperament and energy level, training rooms, decompression access, and long-term resident housing for dogs requiring extended behavioral work before adoption readiness. Fourth, a professional adoption center with multiple private meet-and-greet rooms, a public-facing lobby, and a staffed adoption counseling operation that treats every placement as a considered match rather than a transaction.\nAt 250 dogs per year, the on-site population at any given time runs 30-40 dogs simultaneously. The facility is designed for 1,000 per year at full build, this upgrade establishes the physical bones of that institution at a scale that can open, operate, and demonstrate excellence before the next expansion is funded.\nSupport infrastructure includes industrial-scale food prep and cold storage, laundry facilities rated for high daily volume, staff welfare areas, and supply storage sufficient for 90-day operational continuity.",
+      "description": "Expansion of the Phase 2 sanctuary from 12-dog initial capacity to a professional high-volume rescue and adoption facility capable of processing 500-750 dogs per year at the highest operational standards. This is the inflection point, the node that transforms New Doggerland from a credible small rescue into a serious regional institution.\nThe upgrade encompasses four major additions. First, a main kennel expansion to 40 additional housing units (52 total capacity) with indoor/outdoor runs, climate control, acoustic dampening, and natural light design, each unit above industry minimum in every dimension. Second, a dedicated intake and quarantine building with 8 isolation kennels, multiple exam rooms, and disease-control protocols sufficient for high-volume intake from multiple sources including transport fleet deliveries, local surrender, and disaster response. Third, a behavioral rehabilitation wing with separate play yards grouped by temperament and energy level, training rooms, decompression access, and long-term resident housing for dogs requiring extended behavioral work before adoption readiness. Fourth, a professional adoption center with multiple private meet-and-greet rooms, a public-facing lobby, and a staffed adoption counseling operation that treats every placement as a considered match rather than a transaction.\nAt 500-750 dogs per year with average length of stay of 25-30 days, the on-site population at any given time runs 35-65 dogs simultaneously. The facility is designed for 1,000+ dogs per year at full build; this upgrade establishes the physical bones of that institution at a scale that can open, operate, and demonstrate excellence before the next expansion is funded.\nSupport infrastructure includes industrial-scale food prep and cold storage, commercial laundry facilities rated for high daily volume, staff welfare areas, and supply storage sufficient for 90-day operational continuity.",
       "dependencies": [
         "sanctuary_core"
       ],
@@ -3413,52 +3413,52 @@
   "categories": {
     "start": {
       "label": "Origin",
-      "color": "#FFD700",
+      "color": "#dbba00",
       "order": 0
     },
     "infrastructure": {
       "label": "Infrastructure",
-      "color": "#8B7355",
+      "color": "#00fffb",
       "order": 1
     },
     "sanctuary": {
       "label": "Sanctuary",
-      "color": "#4A7C59",
+      "color": "#e66bff",
       "order": 2
     },
     "cultural": {
       "label": "Cultural",
-      "color": "#7B5EA7",
+      "color": "#d4ff00",
       "order": 3
     },
     "community": {
       "label": "Community",
-      "color": "#C17B2F",
+      "color": "#f5830a",
       "order": 4
     },
     "enrichment": {
       "label": "Enrichment",
-      "color": "#2F7B8C",
+      "color": "#00ccfa",
       "order": 5
     },
     "resort": {
       "label": "Resort",
-      "color": "#8C4A2F",
+      "color": "#f84f0d",
       "order": 6
     },
     "revenue": {
       "label": "Revenue",
-      "color": "#2F6B8C",
+      "color": "#2a00fa",
       "order": 8
     },
     "legacy": {
       "label": "Legacy",
-      "color": "#8C6B2F",
+      "color": "#14a800",
       "order": 9
     }
   },
-  "catSaturation": 100,
-  "catBrightness": 100,
+  "catSaturation": 96,
+  "catBrightness": 97,
   "state": {
     "nodeStatuses": {
       "land": "locked",
@@ -4122,5 +4122,5 @@
       "y": 2590
     }
   ],
-  "exportedAt": "2026-02-25T04:39:19.168Z"
+  "exportedAt": "2026-02-28T07:10:54.686Z"
 }
